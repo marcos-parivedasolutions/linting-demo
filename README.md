@@ -10,3 +10,4 @@ python files that are in the PR
 
 14s with docker
 10s without docker
+1m 48s with super linter
