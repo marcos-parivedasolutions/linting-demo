@@ -1,4 +1,4 @@
-PYSRC := $(shell git diff master... --name-only | grep  -E "(.py)")
+PYSRC := $(shell git diff master...HEAD --name-only | grep  -E "(.py)")
 
 install:
 	pip install -r requirement-dev.txt
