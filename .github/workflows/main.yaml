@@ -9,25 +9,17 @@ jobs:
     name: Lint Code Base
     runs-on: ubuntu-latest
 
+    container:
+      image: docker://marcospariveda/python-linting:latest
+
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
-      - name: Set up Python 3.8
-        uses: actions/setup-python@v1
-        with:
-          python-version: 3.8
-      - name: Install dependencies
-        run: |
-          make install
       - name: Lint with pylint
         run: |
           make pylint
-        env:
-          VALIDATE_ALL_CODEBASE: false
       - name: Check with flake8
         run: |
           make check
-        env:
-          VALIDATE_ALL_CODEBASE: false
