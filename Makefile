@@ -4,7 +4,7 @@ install:
 	pip install -r requirement-dev.txt
 
 pylint:
-	git diff origin/master...HEAD --name-only --diff-filter=d | grep  -E "(.py)"
+	git diff origin/master...HEAD --name-only --diff-filter=d | (grep  -E "(.py)" || true) | xargs pylint
 
 check:
 	flake8 --max-complexity 10 $(CHANGEDPYTHONFILES)
