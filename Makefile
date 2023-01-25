@@ -1,7 +1,8 @@
 install:
 	pip install -r requirement-dev.txt
 
-lint:
+pylint:
 	pylint *.py
 
-all: install lint
+check:
+	flake8 --max-complexity 10 *.py
