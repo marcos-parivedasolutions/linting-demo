@@ -6,7 +6,7 @@ This is faster than using GitHubs super linter and the output is more verbose
 than super linters default errors messages
 
 I configured the MAKEFILE to only run linting on changed python files; those
-pyton files that are in the PR
+python files that are in the PR
 
 14s with docker
-5s without docker
+10s without docker
