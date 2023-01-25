@@ -1,13 +1,10 @@
-PYSRC := $(shell git diff origin/master...HEAD --name-only | grep  -E "(.py)")
+CHANGEDPYTHONFILES := $(shell git diff origin/master...HEAD --name-only | grep  -E "(.py)")
 
 install:
 	pip install -r requirement-dev.txt
 
 pylint:
-	pylint $(PYSRC)
+	pylint $(CHANGEDPYTHONFILES)
 
 check:
-	flake8 --max-complexity 10 *.py
-
-test:
-	echo "ummm"
+	flake8 --max-complexity 10 $(CHANGEDPYTHONFILES)
