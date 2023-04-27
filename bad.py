@@ -2,6 +2,7 @@ unused_var = 5
 unused_var = 5
 unused_var = 5
 unused_var = 5
+unused_var = 5
 
 
 def is_number_even(num):
