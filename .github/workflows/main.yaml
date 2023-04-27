@@ -29,8 +29,10 @@ jobs:
         run: |
           make install
       - name: Lint with pylint
+        if: always()
         run: |
           make pylint
       - name: Check with flake8
+        if: always()
         run: |
           make check
