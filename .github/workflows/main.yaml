@@ -18,7 +18,6 @@ jobs:
         # Give an id to the step, so we can reference it later
         id: check_file_changed
         run: |
-          SOURCEDIFF=$(git diff origin/master...HEAD --name-only --diff-filter=d | grep  -E "(.py)")
           echo "SOURCEDIFF=$SOURCEDIFF" >> $GITHUB_OUTPUT
       - name: Set up Python 3.8
         if: steps.check_file_changed.outputs.SOURCEDIFF
