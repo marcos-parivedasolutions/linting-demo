@@ -1,4 +1,4 @@
-CHANGEDPYTHONFILES := $(shell git diff origin/master...HEAD --name-only --diff-filter=d | grep  -E "(.py$)")
+CHANGEDPYTHONFILES := $(shell git diff origin/master...HEAD --name-only --diff-filter=d | grep  -E "(.py$$)")
 
 install:
 	pip install -r requirement-dev.txt
