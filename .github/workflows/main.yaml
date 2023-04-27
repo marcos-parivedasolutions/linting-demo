@@ -21,13 +21,6 @@ jobs:
         id: check_file_changed
         run: |
           SOURCEDIFF=$(git diff origin/master...HEAD --name-only --diff-filter=d | grep  -E "(.py$)")
-
-  lint:
-    name: Lint Python Files in PR
-    runs-on: ubuntu-latest
-    needs: files_did_change
-
-    steps:
       - name: Set up Python 3.8
         uses: actions/setup-python@v1
         with:
