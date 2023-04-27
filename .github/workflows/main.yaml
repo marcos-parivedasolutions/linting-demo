@@ -26,8 +26,6 @@ jobs:
     name: Lint Python Files in PR
     runs-on: ubuntu-latest
     needs: files_did_change
-    # if: ${{needs.files_did_change.outputs.SOURCEDIFF}}
-    if: needs.files_did_change.outcome == 'success'
 
     steps:
       - name: Set up Python 3.8
