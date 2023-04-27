@@ -9,7 +9,7 @@ jobs:
     name: Detect files changed in PR
     runs-on: ubuntu-latest
     outputs:
-      output: ${{ steps.check_file_changed.outputs.SOURCEDIFF }}
+      SOURCEDIFF: ${{ steps.check_file_changed.outputs.SOURCEDIFF }}
 
     steps:
       - name: Checkout Code
