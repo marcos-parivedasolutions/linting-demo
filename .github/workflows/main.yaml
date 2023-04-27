@@ -8,6 +8,8 @@ jobs:
   files_did_change:
     name: Detect files changed in PR
     runs-on: ubuntu-latest
+    outputs:
+      output: ${{ steps.check_file_changed.outputs.SOURCEDIFF }}
 
     steps:
       - name: Checkout Code
@@ -19,7 +21,7 @@ jobs:
         id: check_file_changed
         run: |
           SOURCEDIFF=$(git diff origin/master...HEAD --name-only --diff-filter=d | grep  -E "(.py)")
-          echo "::set-output name=SOURCEDIFF::$SOURCEDIFF"
+          echo "SOURCEDIFF=$SOURCEDIFF" >> $GITHUB_OUTPUT
 
   intermediate:
     name: Intermediate step
