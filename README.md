@@ -2,12 +2,12 @@
 
 # Automating Python Code Quality
 
-This linter is faster than using GitHubs super linter and the output is more verbose
+This linter is substantially faster than using GitHubs super linter (with the default settings) and the output is more verbose
 than super linters default errors messages.
 
 This linter uses pylint and flake8 on python 3.8 with Github actions.
 
-I configured the Makefile to only run linting on changed python files: those
+I configured the Makefile and main workflow to only run linting on changed python files: those
 python files that are in the PR.
 This makes it such that the linter does not run on the entire repo which
 de-risks introducing linting into an existing project.
