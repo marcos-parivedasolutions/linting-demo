@@ -1,15 +1,11 @@
-name: JS Actions
+name: "my joke action"
 
-on:
-  issues:
-    types: [labeled]
+description: "use an external API to retrieve and display a joke"
 
-jobs:
-  action:
-    if: ${{ !github.event.repository.is_template }}
-    runs-on: ubuntu-latest
+outputs:
+  joke-output:
+    description: The resulting joke from the icanhazdadjokes API
 
-    steps:
-      - uses: actions/checkout@v3
-      - name: ha-ha
-        uses: ./.github/actions/joke-action
+runs:
+  using: "node16"
+  main: "main.js"
