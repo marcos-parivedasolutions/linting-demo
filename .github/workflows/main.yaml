@@ -4,6 +4,7 @@ on:
   pull_request:
     branches: [master]
 
+
 jobs:
   files_did_change:
     name: Detect files changed in PR
