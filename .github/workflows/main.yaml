@@ -37,6 +37,7 @@ jobs:
         run: |
           make check
       - uses: actions/upload-artifact@v3
+        if: always()
         with:
           name: remark-lint-report
           path: public/
